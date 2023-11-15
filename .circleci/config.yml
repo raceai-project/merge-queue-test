@@ -17,6 +17,6 @@ workflows:
           type: approval
           filters:
             branches: 
-              only: /gh-readonly-queue\/main/
+              only: /gh-readonly-queue\/main\/.*/
           requires:
             - build
