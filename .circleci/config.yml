@@ -21,7 +21,8 @@ jobs:
 workflows:
   before-merging:
     jobs:
-      - build
+      - build:
+          name: hoge
       - approval:
           type: approval
           filters:
@@ -29,4 +30,6 @@ workflows:
               only: /gh-readonly-queue\/main\/.*/
           requires:
             - build
-      - test
+      - test:
+          name: test-hoge
+          requires: approval
