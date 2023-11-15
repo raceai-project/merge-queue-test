@@ -9,6 +9,15 @@ jobs:
           command: |
             echo 'Hello World!'
             echo 'This is the delivery pipeline'
+  test:
+    docker:
+      - image: alpine:3.15
+    steps:
+      - run:
+          name: The First Step
+          command: |
+            echo 'Hello World!'
+            echo 'This is the delivery pipeline'
 workflows:
   before-merging:
     jobs:
@@ -20,4 +29,4 @@ workflows:
               only: /gh-readonly-queue\/main\/.*/
           requires:
             - build
-      - build
+      - test
