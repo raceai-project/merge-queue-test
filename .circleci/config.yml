@@ -22,7 +22,7 @@ workflows:
   before-merging:
     jobs:
       - build:
-          name: hoge
+          name: build
       - approval:
           type: approval
           filters:
