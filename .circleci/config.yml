@@ -14,9 +14,8 @@ workflows:
     jobs:
       - build
       - approval:
-        type: approval
-        filters:
-          branches: /gh-readonly-queue\/main/
-        requires:
-          - build
-      
+          type: approval
+          filters:
+            branches: /gh-readonly-queue\/main/
+          requires:
+            - build
