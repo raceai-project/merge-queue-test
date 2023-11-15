@@ -24,6 +24,9 @@ workflows:
     jobs:
       - build:
           name: build
+          filters:
+            branches: 
+              only: /gh-readonly-queue\/main\/.*/
       - approval:
           type: approval
           filters:
@@ -33,5 +36,8 @@ workflows:
             - build
       - test:
           name: test-hoge
+          filters:
+            branches: 
+              only: /gh-readonly-queue\/main\/.*/
           requires: 
             - approval
