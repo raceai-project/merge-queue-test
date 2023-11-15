@@ -20,4 +20,3 @@ workflows:
               only: /gh-readonly-queue\/main\/.*/
           requires:
             - build
-      - build
